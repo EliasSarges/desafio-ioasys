@@ -1,0 +1,12 @@
+{
+  "name": "desafio-ioasys",
+  "displayName": "desafio-ioasys",
+  "expo": {
+    "name": "desafio-ioasys",
+    "slug": "desafio-ioasys",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
