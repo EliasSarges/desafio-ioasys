@@ -10,7 +10,7 @@ import UserContext from "../../contexts/UserContext";
 
 import api from "../../services/api";
 
-export default function Login() {
+export default function Login({ navigation }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [user, setUser] = useState(UserContext);
@@ -27,6 +27,8 @@ export default function Login() {
           );
           await SecureStore.setItemAsync("uid", response.headers["uid"]);
           await SecureStore.setItemAsync("client", response.headers["client"]);
+
+          navigation.reset({ routes: [{ name: "Home" }] });
         });
     }
   }

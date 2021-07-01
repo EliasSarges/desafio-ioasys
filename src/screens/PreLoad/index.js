@@ -19,7 +19,7 @@ export default function PreLoad({ navigation }) {
     }
 
     if (token && uid && client) {
-      navigation.navigate("Login");
+      navigation.navigate("Home");
     }
   }
 
