@@ -8,7 +8,7 @@ const Stack = createStackNavigator();
 export default function MainStack() {
   return (
     <Stack.Navigator
-      initialRouteName="Login"
+      initialRouteName="Preload"
       screenOptions={{ headerShown: false }}
     >
       <Stack.Screen name="Preload" component={PreLoad} />

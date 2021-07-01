@@ -1,9 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import * as SecureStore from "expo-secure-store";
 import { View, Image } from "react-native";
 import { global } from "../../assets/styles/global";
 import { styles } from "./style";
 
-export default function PreLoad() {
+export default function PreLoad({ navigation }) {
+  useEffect(() => {
+    checkLogin();
+  }, []);
+
+  async function checkLogin() {
+    const token = await SecureStore.getItemAsync("token");
+    const uid = await SecureStore.getItemAsync("uid");
+    const client = await SecureStore.getItemAsync("client");
+
+    if (!token && !uid && !client) {
+      navigation.navigate("Login");
+    }
+
+    if (token && uid && client) {
+      navigation.navigate("Login");
+    }
+  }
+
   return (
     <View style={[global.container, styles.PreloadContainer]}>
       <Image

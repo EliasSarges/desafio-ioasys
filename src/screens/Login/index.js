@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { View, Image } from "react-native";
 import { global } from "../../assets/styles/global";
 import { styles } from "./style";
+import * as SecureStore from "expo-secure-store";
 
 import Input from "../../components/Input";
 import Button from "../../components/Button";
@@ -20,6 +21,12 @@ export default function Login() {
         .post("api/v1/users/auth/sign_in", { email, password })
         .then(async (response) => {
           setUser(response.data);
+          await SecureStore.setItemAsync(
+            "token",
+            response.headers["access-token"]
+          );
+          await SecureStore.setItemAsync("uid", response.headers["uid"]);
+          await SecureStore.setItemAsync("client", response.headers["client"]);
         });
     }
   }
