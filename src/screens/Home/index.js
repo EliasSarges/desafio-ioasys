@@ -27,12 +27,14 @@ export default function Home() {
         </Text>
       </TouchableOpacity>
 
-      {active && <Input placeholder="name" />}
-
       {active && (
-        <Select>
-          <OptionSelect title="teste" />
-        </Select>
+        <>
+          <Input placeholder="name" />
+
+          <Select>
+            <OptionSelect title="teste" />
+          </Select>
+        </>
       )}
     </View>
   );

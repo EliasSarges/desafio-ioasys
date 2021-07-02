@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { View, TouchableOpacity, Text } from "react-native";
+
+import ArrowDownSvg from "../../assets/icons/arrow-down.svg";
+
 import { styles } from "./style";
 
 export default function Select({ children }) {
@@ -12,7 +15,8 @@ export default function Select({ children }) {
   return (
     <>
       <TouchableOpacity style={styles.selectButton} onPress={handleClickSelect}>
-        <Text style={{ color: "#fff", fontSize: 20 }}>type</Text>
+        <Text style={{ color: "#333", fontSize: 20 }}>type</Text>
+        <ArrowDownSvg stroke="black" />
       </TouchableOpacity>
 
       {active && (

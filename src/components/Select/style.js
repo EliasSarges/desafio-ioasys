@@ -4,11 +4,13 @@ export const styles = StyleSheet.create({
   selectButton: {
     width: "100%",
     height: 50,
-    backgroundColor: "#333",
     marginTop: 10,
+    borderWidth: 3,
     borderRadius: 10,
-    justifyContent: "center",
-    paddingLeft: 20,
+    justifyContent: "space-between",
+    alignItems: "center",
+    flexDirection: "row",
+    paddingHorizontal: 10,
   },
 
   selectModal: {
@@ -20,6 +22,7 @@ export const styles = StyleSheet.create({
     bottom: 0,
     justifyContent: "center",
     alignItems: "center",
+    zIndex: 2,
   },
 
   closeButton: {
