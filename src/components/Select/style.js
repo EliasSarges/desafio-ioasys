@@ -28,21 +28,22 @@ export const styles = StyleSheet.create({
   closeButton: {
     width: 50,
     height: 50,
-    backgroundColor: "#333",
+    backgroundColor: "#DF6666",
     alignItems: "center",
     justifyContent: "center",
     position: "absolute",
-    top: "16%",
-    right: 10,
+    top: "7%",
+    right: "2%",
     borderRadius: 25,
     zIndex: 2,
   },
 
   selectModalContent: {
-    width: "85%",
+    width: "90%",
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#fff",
-    height: "60%",
+    height: "80%",
+    padding: 10,
   },
 });

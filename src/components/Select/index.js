@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, TouchableOpacity, Text } from "react-native";
+import { View, TouchableOpacity, Text, ScrollView } from "react-native";
 
 import ArrowDownSvg from "../../assets/icons/arrow-down.svg";
 
@@ -28,7 +28,14 @@ export default function Select({ children }) {
             <Text style={{ color: "#fff", fontSize: 30 }}>X</Text>
           </TouchableOpacity>
 
-          <View style={styles.selectModalContent}>{children}</View>
+          <View style={styles.selectModalContent}>
+            <ScrollView
+              style={{ width: "100%" }}
+              contentContainerStyle={{ justifyContent: "center" }}
+            >
+              {children}
+            </ScrollView>
+          </View>
         </View>
       )}
     </>

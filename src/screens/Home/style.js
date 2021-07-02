@@ -9,4 +9,6 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#333",
   },
+
+  removeFilter: { fontWeight: "bold", fontSize: 20 },
 });

@@ -2,7 +2,13 @@ import React from "react";
 import { View, TouchableOpacity, Text, Image } from "react-native";
 import { styles } from "./style";
 
-export default function ButtonHomeList({ name, type, image, ...rest }) {
+export default function ButtonHomeList({
+  name,
+  type,
+  image,
+  sharePrice,
+  ...rest
+}) {
   return (
     <TouchableOpacity style={styles.buttonHomelistContainer} {...rest}>
       <Image
@@ -14,7 +20,8 @@ export default function ButtonHomeList({ name, type, image, ...rest }) {
         <Text style={styles.name}>{name}</Text>
 
         <View style={styles.typeContainer}>
-          <Text style={styles.typeText}>{type}</Text>
+          <Text style={styles.content}>{type}</Text>
+          <Text style={styles.content}>${sharePrice}</Text>
         </View>
       </View>
     </TouchableOpacity>

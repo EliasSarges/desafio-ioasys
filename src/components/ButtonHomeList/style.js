@@ -4,7 +4,7 @@ export const styles = StyleSheet.create({
   buttonHomelistContainer: {
     width: "100%",
     height: 100,
-    backgroundColor: "#333",
+    backgroundColor: "#5F5B5B",
     marginTop: 20,
     alignItems: "center",
     paddingHorizontal: 10,
@@ -32,9 +32,11 @@ export const styles = StyleSheet.create({
     backgroundColor: "#494848",
     marginTop: 2,
     flex: 1,
-    justifyContent: "center",
-    paddingLeft: 10,
+    justifyContent: "space-between",
+    flexDirection: "row",
+    paddingHorizontal: 10,
+    alignItems: "center",
   },
 
-  typeText: { fontSize: 18, color: "#fff" },
+  content: { fontSize: 18, color: "#fff" },
 });
