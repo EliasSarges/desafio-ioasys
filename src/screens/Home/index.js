@@ -26,12 +26,12 @@ export default function Home({ navigation }) {
     fetchApi();
   }, []);
 
-  // filterBy
+  // filter
   useEffect(() => {
     fetchApi();
   }, [name, typeSelected]);
 
-  //delay para a chamada da api ao digitar o nome
+  //delay para a chamada da api ao digitar o
   const debounceSearch = useCallback(
     debounce((text) => setName(text), 500),
     []
@@ -48,7 +48,9 @@ export default function Home({ navigation }) {
       //faz uma busca com os filtros especificados
       if (name || typeSelected) {
         const response = await api.get(
-          `enterprises?enterprise_types=${typeSelected}&name=${name}`,
+          `enterprises?${
+            typeSelected ? `enterprise_types=${typeSelected}` : ""
+          }&name=${name}`,
           {
             headers: { "access-token": token, client: client, uid: uid },
           }
@@ -102,6 +104,7 @@ export default function Home({ navigation }) {
           onPress={() => {
             setName("");
             setTypeSelected(0);
+            setActive(false);
           }}
         >
           <Text style={styles.removeFilter}>remove filter</Text>
