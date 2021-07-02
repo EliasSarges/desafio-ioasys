@@ -23,5 +23,7 @@ export const styles = StyleSheet.create({
     height: 50,
     backgroundColor: "#333",
     borderRadius: 25,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });

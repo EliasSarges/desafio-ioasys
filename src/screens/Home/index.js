@@ -21,10 +21,6 @@ export default function Home() {
     fetchApi();
   }, []);
 
-  useEffect(() => {
-    console.log(enterprises);
-  }, [enterprises]);
-
   async function fetchApi() {
     const token = await SecureStore.getItemAsync("token");
     const client = await SecureStore.getItemAsync("client");

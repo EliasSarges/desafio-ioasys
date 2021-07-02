@@ -9,11 +9,12 @@ import Button from "../../components/Button";
 import UserContext from "../../contexts/UserContext";
 
 import api from "../../services/api";
+import { useContext } from "react";
 
 export default function Login({ navigation }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [user, setUser] = useState(UserContext);
+  const [user, setUser] = useContext(UserContext);
 
   function submit() {
     if (email && password) {
@@ -21,6 +22,7 @@ export default function Login({ navigation }) {
         .post("api/v1/users/auth/sign_in", { email, password })
         .then(async (response) => {
           setUser(response.data);
+          console.log(response.data);
           await SecureStore.setItemAsync(
             "token",
             response.headers["access-token"]

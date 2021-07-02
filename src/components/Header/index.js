@@ -5,30 +5,51 @@ import { View, Text, TouchableOpacity } from "react-native";
 import { styles } from "./style";
 
 import ArrowSvg from "../../assets/icons/arrow.svg";
+import ArrowBlackSvg from "../../assets/icons/arrow-black.svg";
+import UserSvg from "../../assets/icons/user.svg";
 
-export default function Header({ backButton, logout, user }) {
+export default function Header({
+  backButton,
+  backBlackButton,
+  logout,
+  style,
+  user,
+}) {
   const navigation = useNavigation();
 
-  async function logout() {
+  async function logOff() {
     await SecureStore.deleteItemAsync("token");
     await SecureStore.deleteItemAsync("uid");
     await SecureStore.deleteItemAsync("client");
 
-    navigation.navigate("Login");
+    navigation.reset({ routes: [{ name: "Login" }] });
   }
 
   return (
-    <View style={styles.headerContainer}>
-      {user && <TouchableOpacity style={styles.user} />}
+    <View style={[styles.headerContainer, style]}>
+      {user && (
+        <TouchableOpacity
+          style={styles.user}
+          onPress={() => navigation.navigate("UserInfo")}
+        >
+          <UserSvg width={30} height={30} />
+        </TouchableOpacity>
+      )}
 
       {backButton && (
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
           <ArrowSvg width={16} />
         </TouchableOpacity>
       )}
 
+      {backBlackButton && (
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <ArrowBlackSvg width={16} />
+        </TouchableOpacity>
+      )}
+
       {logout && (
-        <TouchableOpacity onPress={logout}>
+        <TouchableOpacity onPress={logOff}>
           <Text style={styles.logout}>logout</Text>
         </TouchableOpacity>
       )}
