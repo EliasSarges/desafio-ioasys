@@ -37,7 +37,10 @@ export default function Header({
       )}
 
       {backButton && (
-        <TouchableOpacity onPress={() => navigation.goBack()}>
+        <TouchableOpacity
+          style={{ padding: 10 }}
+          onPress={() => navigation.goBack()}
+        >
           <ArrowSvg width={16} />
         </TouchableOpacity>
       )}

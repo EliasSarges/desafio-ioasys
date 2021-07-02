@@ -13,7 +13,7 @@ import { styles } from "./style";
 
 import api from "../../services/api";
 
-export default function Home() {
+export default function Home({ navigation }) {
   const [active, setActive] = useState(false);
   const [enterprises, setEnterprises] = useState([]);
 
@@ -27,7 +27,7 @@ export default function Home() {
     const uid = await SecureStore.getItemAsync("uid");
 
     if (token && client && uid) {
-      const response = await api.get("api/v1/enterprises", {
+      const response = await api.get("enterprises", {
         headers: { "access-token": token, client: client, uid: uid },
       });
 
@@ -69,6 +69,11 @@ export default function Home() {
                 name={enterprise.enterprise_name}
                 type={enterprise.enterprise_type.enterprise_type_name}
                 image={enterprise.photo}
+                onPress={() =>
+                  navigation.navigate("EnterpriseDetails", {
+                    id: enterprise.id,
+                  })
+                }
               />
             );
           })}

@@ -4,7 +4,7 @@ import { styles } from "./style";
 
 export default function ButtonHomeList({ name, type, image, ...rest }) {
   return (
-    <TouchableOpacity style={styles.buttonHomelistContainer}>
+    <TouchableOpacity style={styles.buttonHomelistContainer} {...rest}>
       <Image
         source={{ uri: `https://empresas.ioasys.com.br/${image}` }}
         style={{ width: "25%", height: "80%" }}
@@ -12,7 +12,6 @@ export default function ButtonHomeList({ name, type, image, ...rest }) {
 
       <View style={styles.textContainer}>
         <Text style={styles.name}>{name}</Text>
-        <Text style={styles.subtitle}>type</Text>
 
         <View style={styles.typeContainer}>
           <Text style={styles.typeText}>{type}</Text>

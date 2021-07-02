@@ -19,10 +19,9 @@ export default function Login({ navigation }) {
   function submit() {
     if (email && password) {
       api
-        .post("api/v1/users/auth/sign_in", { email, password })
+        .post("users/auth/sign_in", { email, password })
         .then(async (response) => {
           setUser(response.data);
-          console.log(response.data);
           await SecureStore.setItemAsync(
             "token",
             response.headers["access-token"]

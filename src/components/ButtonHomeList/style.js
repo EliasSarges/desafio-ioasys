@@ -23,6 +23,7 @@ export const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#fff",
     paddingLeft: 10,
+    flex: 1,
   },
 
   subtitle: { fontSize: 18, color: "#fff", paddingLeft: 10 },

@@ -4,6 +4,7 @@ import PreLoad from "../../screens/PreLoad";
 import Login from "../../screens/Login";
 import Home from "../../screens/Home";
 import UserInfo from "../../screens/UserInfo";
+import EnterpriseDetails from "../../screens/EnterpriseDetails";
 
 const Stack = createStackNavigator();
 
@@ -17,6 +18,7 @@ export default function MainStack() {
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="UserInfo" component={UserInfo} />
+      <Stack.Screen name="EnterpriseDetails" component={EnterpriseDetails} />
     </Stack.Navigator>
   );
 }
