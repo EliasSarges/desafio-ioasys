@@ -15,11 +15,11 @@ export default function PreLoad({ navigation }) {
     const client = await SecureStore.getItemAsync("client");
 
     if (!token && !uid && !client) {
-      navigation.navigate("Login");
+      navigation.reset({ routes: [{ name: "Login" }] });
     }
 
     if (token && uid && client) {
-      navigation.navigate("Home");
+      navigation.reset({ routes: [{ name: "Home" }] });
     }
   }
 

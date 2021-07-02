@@ -10,7 +10,6 @@ export const styles = StyleSheet.create({
     alignItems: "center",
 
     marginTop: StatusBar.currentHeight,
-    paddingHorizontal: "5%",
   },
 
   logout: {

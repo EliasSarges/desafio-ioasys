@@ -5,6 +5,7 @@ export const styles = StyleSheet.create({
     width: "100%",
     height: 80,
     marginBottom: 10,
+    fontSize: 30,
   },
 
   input: {
@@ -20,5 +21,6 @@ export const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#333",
     marginBottom: 5,
+    fontSize: 30,
   },
 });

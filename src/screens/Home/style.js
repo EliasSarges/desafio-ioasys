@@ -1,8 +1,12 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-  homeContainer: {
-    justifyContent: "center",
+  filterByButton: {
+    width: "28%",
+    height: 40,
+    marginTop: 15,
     alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#333",
   },
 });

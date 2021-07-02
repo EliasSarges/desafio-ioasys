@@ -8,7 +8,7 @@ export default function Input({ label, ...rest }) {
       <Text style={styles.label}>{label}</Text>
 
       <View style={styles.input}>
-        <TextInput {...rest} />
+        <TextInput {...rest} style={{ fontSize: 20 }} />
       </View>
     </View>
   );
