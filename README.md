@@ -33,5 +33,5 @@ ele solicitará a criação de uma nova conta se você não tiver uma conta expo
 
  **será gerado um link onde você pode baixar o apk ou ipa.**
 
-**link para a build gerada**
+**link para a build android gerada**
 https://expo.io/artifacts/74bf514a-b874-4987-8522-d6de825cd70f
