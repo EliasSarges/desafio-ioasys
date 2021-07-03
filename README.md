@@ -1,8 +1,5 @@
-![N|Solid](logo_ioasys.png)
-
 # Desafio React Native - ioasys
 
-Este documento `README.md` tem como objetivo fornecer as informações necessárias para realização do projeto Empresas.
 ## bibliotecas utilizadas
 
 ### react-native-svg-transformer 
@@ -36,4 +33,5 @@ ele solicitará a criação de uma nova conta se você não tiver uma conta expo
 
  **será gerado um link onde você pode baixar o apk ou ipa.**
 
- 
+**link para a build gerada**
+https://expo.io/artifacts/74bf514a-b874-4987-8522-d6de825cd70f
